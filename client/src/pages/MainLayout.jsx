@@ -1,22 +1,40 @@
 import { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Dashboard from '../components/Dashboard';
-import Settings from '../components/Settings';
+import Reports from '../components/Reports';
 import Projects from '../components/Projects';
 import Activities from '../components/Activities';
+import Settings from '../components/Settings';
 import '../styles/MainLayout.css';
 
 const componentMap = {
   Dashboard: <Dashboard />,
-  Settings: <Settings />,
+  Reports: <Reports />,
   Projects: <Projects />,
   Activities: <Activities />,
+  Settings: <Settings />
 };
 
+
 const sidebarItemsByRole = {
-  admin: ['Dashboard', 'Settings', 'Projects', 'Activities'],
-  manager: ['Dashboard', 'Projects', 'Activities'],
-  staff: ['Dashboard', 'Activities'],
+  admin: [
+    { label: 'Dashboard', icon: '📊' },
+    { label: 'Projects', icon: '📁' },
+    { label: 'Activities', icon: '🏃' },
+    { label: 'Reports', icon: '📄' },
+
+  ],
+  manager: [
+    { label: 'Dashboard', icon: '📊' },
+    { label: 'Projects', icon: '📁' },
+    { label: 'Activities', icon: '🏃' },
+
+  ],
+  staff: [
+    { label: 'Dashboard', icon: '📊' },
+    { label: 'Activities', icon: '🏃' },
+
+  ],
 };
 
 const MainLayout = ({ role }) => {
@@ -25,7 +43,7 @@ const MainLayout = ({ role }) => {
 
   return (
     <div className="main-layout">
-      <Sidebar onSelect={setActiveComponent} items={sidebarItems} />
+      <Sidebar items={sidebarItems} onSelect={setActiveComponent} />
       <main className="main-content">
         {componentMap[activeComponent]}
       </main>

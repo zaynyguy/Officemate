@@ -8,6 +8,7 @@ const users = {
   staff: 'staff123',
 };
 
+
 const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

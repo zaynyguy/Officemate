@@ -7,19 +7,92 @@
   justify-content: space-between;
   padding: 1rem;
   border-right: 1px solid #ccc;
+  transition: width 0.3s ease-in-out;
 }
+
+.sidebar.collapsed {
+  width: 4rem;
+  align-items: center;
+}
+
+.sidebar .hamburger {
+  background: none;
+  border: 1px solid transparent;
+  width:fit-content;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.sidebar-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .sidebar button {
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
   text-align: left;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  margin-bottom: 0.5rem;
   background: var(--button-bg);
   color: var(--button-text);
-  border: none;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
 }
-.sidebar .toggle-theme {
-  padding: 0.5rem;
-  border-radius: 0.25rem;
+
+.sidebar button:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.sidebar.collapsed button {
+  justify-content: center;
+}
+
+.sidebar .icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.sidebar.collapsed .label {
+  display: none;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title div {
+  font-size: 1.5rem;
+}
+
+.toggles {
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.toggles button {
+  width: fit-content;
+  margin: 5px auto;
+  font-size: 1rem;
+
+}
+
+.toggles .settings-toggle {
+  font-size: 1.5rem;
+}
+
+
+.sidebar.collapsed .toggles {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }

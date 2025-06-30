@@ -1,19 +1,19 @@
-/* File: src/index.css */
-
 :root {
-  --bg-color: #f4f4f4;
-  --text-color: #1f1f1f;
-  --card-bg: #ffffff;
-  --button-bg: #e0e0e0;
-  --button-text: #000;
+  --bg-color: #f7fafd;        
+  --text-color: #1f2d3d;      /* Dark slate navy */
+  --card-bg: #ffffff;         /* Crisp white for cards and panels */
+  --button-bg: #e0efff;       /* Light desaturated blue */
+  --button-text: #1a365d;     /* Navy button text */
+  --accent-color: #3b82f6;    /* Tailwind blue-500 for links, hovers, highlights */
 }
 
 body.dark-mode {
-  --bg-color: #1e1e1e;
-  --text-color: #f4f4f4;
-  --card-bg: #2c2c2c;
-  --button-bg: #3a3a3a;
-  --button-text: #fff;
+  --bg-color: #121c2b;        /* Deep midnight blue */
+  --text-color: #e4eaf3;      /* Gentle foggy white */
+  --card-bg: #1f2d3d;         /* Blue-gray for panels */
+  --button-bg: #2e4a69;       /* Desaturated steel blue */
+  --button-text: #f4faff;     /* Almost-white */
+  --accent-color: #60a5fa;    /* Tailwind blue-400 for contrast/hovers */
 }
 
 * {
