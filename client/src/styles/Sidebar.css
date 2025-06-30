@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
-  border-right: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: width 0.3s ease-in-out;
 }
 
@@ -49,6 +49,7 @@
   border: 1px solid var(--accent-color);
 }
 
+
 .sidebar.collapsed button {
   justify-content: center;
 }
@@ -73,26 +74,17 @@
   font-size: 1.5rem;
 }
 
-.toggles {
+
+.toggle {
+  width: 100%;
+  margin: 5px auto;
+  font-size: 1.5rem;
   display: flex;
-  justify-content: space-around;
   
 }
 
-.toggles button {
-  width: fit-content;
-  margin: 5px auto;
+.toggle .label{
   font-size: 1rem;
-
+  margin: 0 10px;
 }
 
-.toggles .settings-toggle {
-  font-size: 1.5rem;
-}
-
-
-.sidebar.collapsed .toggles {
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}

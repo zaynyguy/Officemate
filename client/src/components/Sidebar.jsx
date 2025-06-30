@@ -2,10 +2,11 @@ import { useState } from "react";
 import "../styles/Sidebar.css";
 
 const Sidebar = ({ onSelect, items }) => {
+  const [collapsed, setCollapsed] = useState(false);
+  
   const [darkMode, setDarkMode] = useState(() =>
     document.documentElement.classList.contains("dark")
   );
-  const [collapsed, setCollapsed] = useState(false);
 
   const toggleTheme = () => {
     document.body.classList.toggle("dark-mode");
@@ -42,12 +43,11 @@ const Sidebar = ({ onSelect, items }) => {
       </div>
 
       <div className="toggles">
-        <button onClick={toggleTheme} className="theme-toggle">
-          {darkMode ? "🔆" : "🌑"}
-        </button>
-
-        <button className="settings-toggle" onClick={() => onSelect('Settings')}>
-          ⚙
+        <button
+          className="toggle"
+          onClick={() => onSelect("Settings")}
+        >
+          ⚙ <div className="label">{collapsed ? "" : "Settings"} </div>
         </button>
       </div>
     </aside>

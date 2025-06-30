@@ -1,0 +1,197 @@
+/* src/styles/Reports.css */
+
+.reports-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  max-width: 900px;
+  margin: 20px auto;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+body.dark-mode .reports-container {
+  background-color: #374151; /* Darker background for dark mode */
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.reports-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .reports-title {
+  color: #ffffff; /* White text for dark mode */
+}
+
+.reports-intro {
+  margin-bottom: 25px;
+  font-size: 1em;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .reports-intro {
+  color: #d1d5db; /* Lighter gray text for dark mode */
+}
+
+.reports-username-highlight {
+  font-weight: bold;
+  color: #007bff; /* Blue for highlighting username */
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .reports-username-highlight {
+  color: #60a5fa; /* Lighter blue for dark mode */
+}
+
+.report-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.report-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #eee; /* Light border for definition */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .report-card {
+  background-color: #4b5563; /* Darker background for dark mode cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-color: #6b7280;
+}
+
+.report-icon {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #007bff; /* General icon color */
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .report-icon {
+  color: #93c5fd; /* Lighter blue icon for dark mode */
+}
+
+.report-card-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .report-card-title {
+  color: #ffffff; /* White text for dark mode */
+}
+
+.report-card-value {
+  font-size: 2em;
+  font-weight: bold;
+  color: #007bff; /* General value color */
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .report-card-value {
+  color: #93c5fd; /* Lighter blue value for dark mode */
+}
+
+/* Card specific colors (simplified to general colors with dark mode) */
+.blue-card .report-icon, .blue-card .report-card-value { color: #007bff; }
+body.dark-mode .blue-card .report-icon, body.dark-mode .blue-card .report-card-value { color: #93c5fd; }
+
+.green-card .report-icon, .green-card .report-card-value { color: #28a745; }
+body.dark-mode .green-card .report-icon, body.dark-mode .green-card .report-card-value { color: #6ee7b7; }
+
+.yellow-card .report-icon, .yellow-card .report-card-value { color: #ffc107; }
+body.dark-mode .yellow-card .report-icon, body.dark-mode .yellow-card .report-card-value { color: #fcd34d; }
+
+.purple-card .report-icon, .purple-card .report-card-value { color: #6f42c1; }
+body.dark-mode .purple-card .report-icon, body.dark-mode .purple-card .report-card-value { color: #c4b5fd; }
+
+.orange-card .report-icon, .orange-card .report-card-value { color: #fd7e14; }
+body.dark-mode .orange-card .report-icon, body.dark-mode .orange-card .report-card-value { color: #fdba74; }
+
+.red-card .report-icon, .red-card .report-card-value { color: #dc3545; }
+body.dark-mode .red-card .report-icon, body.dark-mode .red-card .report-card-value { color: #fca5a5; }
+
+
+.recent-activity-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-top: 20px;
+  border: 1px solid #eee;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .recent-activity-section {
+  background-color: #4b5563; /* Darker background for dark mode */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-color: #6b7280;
+}
+
+.recent-activity-section .section-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .recent-activity-section .section-title {
+  color: #ffffff; /* White text for dark mode */
+}
+
+.recent-activity-text {
+  color: #555;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .recent-activity-text {
+  color: #d1d5db; /* Lighter gray text for dark mode */
+}
+
+.generate-report-button {
+  margin-top: 25px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.generate-report-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .generate-report-button {
+  background-color: #60a5fa; /* Lighter blue for dark mode button */
+}
+
+body.dark-mode .generate-report-button:hover {
+  background-color: #3b82f6; /* Darker blue on hover for dark mode */
+}

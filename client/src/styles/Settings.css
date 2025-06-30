@@ -1,0 +1,225 @@
+/* src/styles/Settings.css */
+
+.settings-container {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+  color: #1a202c;
+  /* max-width: 1000px;
+  margin: 0 auto; */
+}
+
+body.dark-mode .settings-container {
+  background-color: #374151;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.settings-title {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.settings-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* 1.5rem */
+}
+
+.settings-section {
+  background-color: #f9fafb; /* Light background for sections */
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .settings-section {
+  background-color: #4b5563; /* Darker background for sections */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a202c;
+}
+
+body.dark-mode .section-title {
+  color: #ffffff;
+}
+
+/* User Profile Section */
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #3b82f6; /* Blue for avatar background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+}
+
+.profile-label {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 4px;
+}
+
+body.dark-mode .profile-label {
+  color: #d1d5db;
+}
+
+.profile-username {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: #2563eb; /* Blue for username */
+}
+
+body.dark-mode .profile-username {
+  color: #60a5fa; /* Lighter blue for dark mode */
+}
+
+.profile-description {
+  margin-top: 16px;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+body.dark-mode .profile-description {
+  color: #d1d5db;
+}
+
+.settings-button {
+  margin-top: 24px;
+  background-color: #2563eb; /* Blue */
+  color: #ffffff;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.settings-button:hover {
+  background-color: #1d4ed8; /* Darker blue */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .settings-button {
+  background-color: #3b82f6;
+}
+
+body.dark-mode .settings-button:hover {
+  background-color: #2563eb;
+}
+
+/* General Settings Section */
+.settings-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) { /* Medium screens and up */
+  .settings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .setting-item {
+  background-color: #374151;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.setting-label {
+  color: #374151;
+}
+
+body.dark-mode .setting-label {
+  color: #d1d5db;
+}
+
+.setting-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #2563eb; /* Blue checkmark */
+  cursor: pointer;
+}
+
+.setting-select {
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #374151;
+  cursor: pointer;
+}
+
+body.dark-mode .setting-select {
+  background-color: #4b5563;
+  border-color: #6b7280;
+  color: #ffffff;
+}
+
+.setting-select:hover {
+  border-color: #2563eb; /* Blue border on hover */
+}
+
+.security-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+
+.security-action-button {
+  background: none;
+  border: none;
+  color: #2563eb; 
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.security-action-button:hover {
+  color: #1d4ed8; 
+}
+
+body.dark-mode .security-action-button {
+  color: #60a5fa;
+}
+
+body.dark-mode .security-action-button:hover {
+  color: #3b82f6;
+}
+
