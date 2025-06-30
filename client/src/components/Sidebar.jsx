@@ -1,29 +1,62 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { LanguageContext } from "../contexts/LanguageContext";
 import "../styles/Sidebar.css";
 
-const Sidebar = ({ onSelect, items }) => {
-  const [collapsed, setCollapsed] = useState(false);
-  
-  const [darkMode, setDarkMode] = useState(() =>
-    document.documentElement.classList.contains("dark")
-  );
+// Define translations for Sidebar
+const sidebarTranslations = {
+  English: {
+    officemate: "Officemate",
+    dashboard: "Dashboard",
+    projects: "Projects",
+    activities: "Activities",
+    reports: "Reports",
+    settings: "Settings",
+    expandSidebar: "Expand Sidebar",
+    collapseSidebar: "Collapse Sidebar",
+  },
+  Amharic: {
+    officemate: "ኦፊስማት",
+    dashboard: "ዳሽቦርድ",
+    projects: "ፕሮጀክቶች",
+    activities: "እንቅስቃሴዎች",
+    reports: "ሪፖርቶች",
+    settings: "ቅንብሮች",
+    expandSidebar: "የጎን አሞሌን ዘርጋ",
+    collapseSidebar: "የጎን አሞሌን ዝጋ",
+  },
+  Oromo: {
+    officemate: "Officemate",
+    dashboard: "Daashboordii",
+    projects: "Pirojektiiwwan",
+    activities: "Hojiiwwan",
+    reports: "Gabaasaa",
+    settings: "Qindaa'ina",
+    expandSidebar: "Saayidbaarii Bal'isi",
+    collapseSidebar: "Saayidbaarii Cuqi",
+  },
+};
 
-  const toggleTheme = () => {
-    document.body.classList.toggle("dark-mode");
-    setDarkMode(document.body.classList.contains("dark-mode"));
-  };
+const Sidebar = ({ onSelect, items }) => {
+  const { currentLanguage } = useContext(LanguageContext);
+  const [collapsed, setCollapsed] = useState(false);
 
   const toggleCollapse = () => {
     setCollapsed((prev) => !prev);
   };
 
+  const translations = sidebarTranslations[currentLanguage] || sidebarTranslations.English;
+
   return (
     <aside className={`sidebar ${collapsed ? "collapsed" : ""}`}>
       <div>
         <div className="title">
-          <div className="label">Officemate</div>
+          <div className="label">{translations.officemate}</div>
 
-          <button onClick={toggleCollapse} className="hamburger">
+          <button
+            onClick={toggleCollapse}
+            className="hamburger"
+            title={collapsed ? translations.expandSidebar : translations.collapseSidebar}
+          >
             ☰
           </button>
         </div>
@@ -33,10 +66,10 @@ const Sidebar = ({ onSelect, items }) => {
             <button
               key={item.label}
               onClick={() => onSelect(item.label)}
-              title={collapsed ? item.label : ""}
+              title={collapsed ? translations[item.label.toLowerCase()] : ""}
             >
               <span className="icon">{item.icon}</span>
-              {!collapsed && <span className="label">{item.label}</span>}
+              {!collapsed && <span className="label">{translations[item.label.toLowerCase()]}</span>}
             </button>
           ))}
         </div>
@@ -47,7 +80,7 @@ const Sidebar = ({ onSelect, items }) => {
           className="toggle"
           onClick={() => onSelect("Settings")}
         >
-          ⚙ <div className="label">{collapsed ? "" : "Settings"} </div>
+          ⚙ <div className="label">{collapsed ? "" : translations.settings} </div>
         </button>
       </div>
     </aside>

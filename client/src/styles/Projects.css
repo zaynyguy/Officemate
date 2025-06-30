@@ -1,0 +1,321 @@
+:root {
+  --bg-color-light: #f3f4f6;
+  --card-bg-light: #ffffff;
+  --text-color-light: #1a202c;
+  --button-bg-light: #2563eb;
+  --button-text-light: #ffffff;
+  --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-color-light: #e2e8f0;
+  --header-bg-light: #4a69bd;
+  --header-text-light: #fff;
+  --row-bg-light: #f0f4f8;
+  --row-hover-bg-light: #e0eaf5;
+  --summary-bg-light: #dbeafe;
+  --summary-text-light: #1a202c;
+  --sub-title-bg-light: #bfd8f5;
+  --sub-title-text-light: #1a202c;
+  --edit-button-hover-light: #a7c9f7;
+}
+
+body.dark-mode {
+  --bg-color-dark: #1f2937;
+  --card-bg-dark: #374151;
+  --text-color-dark: #ffffff;
+  --button-bg-dark: #3b82f6;
+  --button-text-dark: #ffffff;
+  --shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --border-color-dark: #6b7280;
+  --header-bg-dark: #2d3748;
+  --header-text-dark: #ffffff;
+  --row-bg-dark: #1e2837;
+  --row-hover-bg-dark: #2a3645;
+  --summary-bg-dark: #2d3748;
+  --summary-text-dark: #ffffff;
+  --sub-title-bg-dark: #2d3748;
+  --sub-title-text-dark: #ffffff;
+  --edit-button-hover-dark: #4a5568;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mainBody {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .mainBody {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+.planPage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.planPage h1 {
+  color: var(--text-color-light);
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .planPage h1 {
+  color: var(--text-color-dark);
+}
+
+.addGoalButton {
+  background: var(--button-bg-light);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--button-text-light);
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.addGoalButton:hover {
+  background-color: #3778cf;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .addGoalButton {
+  background: var(--button-bg-dark);
+  color: var(--button-text-dark);
+}
+
+body.dark-mode .addGoalButton:hover {
+  background-color: #2563eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container {
+  background: var(--card-bg-light);
+  border-radius: 5px;
+  box-shadow: var(--shadow-light);
+  padding: 1rem;
+  margin: 2rem;
+  overflow-x: auto;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+body.dark-mode .container {
+  background: var(--card-bg-dark);
+  box-shadow: var(--shadow-dark);
+}
+
+.container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .container:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.titles {
+  color: var(--summary-text-light);
+  padding: 0.5rem 1rem;
+}
+
+body.dark-mode .titles {
+  color: var(--summary-text-dark);
+}
+
+.subTitles {
+  padding: 0.75rem 1rem;
+  margin: 0;
+  color: var(--sub-title-text-light);
+  background-color: var(--sub-title-bg-light);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .subTitles {
+  background-color: var(--sub-title-bg-dark);
+  color: var(--sub-title-text-dark);
+}
+
+details {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color-light);
+  transition: border-color 0.3s ease;
+}
+
+body.dark-mode details {
+  border: 1px solid var(--border-color-dark);
+}
+
+details summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--summary-bg-light);
+  color: var(--summary-text-light);
+  padding: 0.75rem 1rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode details summary {
+  background-color: var(--summary-bg-dark);
+  color: var(--summary-text-dark);
+}
+
+summary::-webkit-details-marker,
+summary::marker {
+  display: none;
+}
+
+details summary::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 0.5em;
+  transition: transform 0.2s ease;
+  color: var(--text-color-light);
+}
+
+body.dark-mode details summary::before {
+  color: var(--text-color-dark);
+}
+
+details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.TableClass {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  table-layout: auto;
+  color: var(--text-color-light);
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .TableClass {
+  color: var(--text-color-dark);
+}
+
+.TableClass thead th,
+.TableClass tbody td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid var(--border-color-light);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+body.dark-mode .TableClass thead th,
+body.dark-mode .TableClass tbody td {
+  border: 1px solid var(--border-color-dark);
+}
+
+.TableClass thead th {
+  background-color: var(--header-bg-light);
+  color: var(--header-text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .TableClass thead th {
+  background-color: var(--header-bg-dark);
+  color: var(--header-text-dark);
+}
+
+.TableClass tbody td {
+  background-color: var(--row-bg-light);
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .TableClass tbody td {
+  background-color: var(--row-bg-dark);
+}
+
+.TableClass tbody tr:hover {
+  background-color: var(--row-hover-bg-light);
+}
+
+body.dark-mode .TableClass tbody tr:hover {
+  background-color: var(--row-hover-bg-dark);
+}
+
+@media (max-width: 600px) {
+  .TableClass,
+  .TableClass thead,
+  .TableClass tbody,
+  .TableClass th,
+  .TableClass td,
+  .TableClass tr {
+    display: block;
+  }
+  .TableClass thead {
+    display: none;
+  }
+  .TableClass tr {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color-light);
+  }
+  body.dark-mode .TableClass tr {
+    border: 1px solid var(--border-color-dark);
+  }
+  .TableClass td {
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+  .TableClass td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 0.75rem;
+    font-weight: bold;
+    text-align: left;
+    color: var(--text-color-light);
+  }
+  body.dark-mode .TableClass td::before {
+    color: var(--text-color-dark);
+  }
+}
+
+.editing {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--button-bg-light);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.editing:hover {
+  background-color: var(--edit-button-hover-light);
+}
+
+body.dark-mode .editing {
+  color: var(--button-bg-dark);
+}
+
+body.dark-mode .editing:hover {
+  background-color: var(--edit-button-hover-dark);
+}
+
+.mainBody > h1 {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--text-color-light);
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .mainBody > h1 {
+  color: var(--text-color-dark);
+}

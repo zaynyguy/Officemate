@@ -1,0 +1,64 @@
+:root {
+  --progress-bar-bg-light: #e0e0e0;
+  --progress-bar-shadow-light: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  --progress-bar-border-light: 1px solid #ccc;
+  --progress-label-color-light: #333;
+  --progress-low: #e74c3c;
+  --progress-medium: #f39c12;
+  --progress-high: #2ecc71;
+}
+
+body.dark-mode {
+  --progress-bar-bg-dark: #444;
+  --progress-bar-shadow-dark: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+  --progress-bar-border-dark: 1px solid #666;
+  --progress-label-color-dark: #fff;
+  --progress-low: #c0392b;
+  --progress-medium: #e67e22;
+  --progress-high: #27ae60;
+}
+
+.progress-bar {
+  position: relative;
+  background: var(--progress-bar-bg-light);
+  border-radius: 6px;
+  overflow: hidden;
+  height: 1.25rem;
+  width: 100%;
+  box-shadow: var(--progress-bar-shadow-light);
+  border: var(--progress-bar-border-light);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .progress-bar {
+  background: var(--progress-bar-bg-dark);
+  box-shadow: var(--progress-bar-shadow-dark);
+  border: var(--progress-bar-border-dark);
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 6px;
+  transition: width 0.4s ease-out, background-color 0.4s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.progress-label {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--progress-label-color-light);
+  line-height: 1.25rem;
+  pointer-events: none;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .progress-label {
+  color: var(--progress-label-color-dark);
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+}
