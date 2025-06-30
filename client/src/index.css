@@ -1,0 +1,35 @@
+/* File: src/index.css */
+
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #1f1f1f;
+  --card-bg: #ffffff;
+  --button-bg: #e0e0e0;
+  --button-text: #000;
+}
+
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #f4f4f4;
+  --card-bg: #2c2c2c;
+  --button-bg: #3a3a3a;
+  --button-text: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+input, button {
+  font-size: 1rem;
+  font-family: inherit;
+}

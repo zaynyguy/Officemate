@@ -1,0 +1,25 @@
+.sidebar {
+  width: 16rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border-right: 1px solid #ccc;
+}
+.sidebar button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+}
+.sidebar .toggle-theme {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}

@@ -1,0 +1,7 @@
+.page {
+  padding: 2rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
